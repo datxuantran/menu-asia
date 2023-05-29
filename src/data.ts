@@ -264,14 +264,14 @@ export const extraItems = [
 	},
 	{
 		id: 5,
-		primaryDescription:
-			"Liebe Gäste, wir verpacken Ihre nichtverzehren Speisen gerne ein. Für die Verpackung berechnen wir",
+		primaryDescription: `Liebe Gäste, 
+			wir verpacken Ihre nichtverzehren Speisen gerne ein. Für die Verpackung berechnen wir`,
 		secondaryDescription: "",
 		price: "1,00",
 	},
 ];
 
-export const footer = [
+export const footers = [
 	{
 		id: 1,
 		description:
@@ -595,9 +595,9 @@ nach Szechuan-Art (scharf)2
 pikante Knoblauchsoße
 8.50€
 
-59. 
-nach vietnamesischer Art (leicht scharf)2 
-9.00€ 
+59.
+nach vietnamesischer Art (leicht scharf)2
+9.00€
 
 60. 
 Chop Suey2
@@ -638,8 +638,9 @@ nach vietnamesischer Art (leicht scharf)2
 9.80€
 
 70. 
-gebratene Garnelen in Thai-Curry-Soße mit Kokosmilch (scharf)2 
+gebratene Garnelen (scharf)2 
 "OHNE SCHARF" geht nicht
+in Thai-Curry-Soße mit Kokosmilch
 10.00€
 
 71. 

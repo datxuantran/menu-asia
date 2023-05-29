@@ -25,10 +25,210 @@ ol[role="list"] {
 `;
 
 export const A4Page = styled.div`
+	--clr-accent-500: hsl(12, 60%, 45%);
+	--clr-accent-400: hsl(12, 88%, 59%);
+	--clr-accent-300: hsl(12, 88%, 75%);
+	--clr-accent-100: hsl(13, 100%, 96%);
+
+	--clr-primary-400: hsl(228, 39%, 23%);
+
+	--clr-neutral-900: hsl(232, 12%, 13%);
+	--clr-neutral-200: hsl(0 0% 97%);
+	--clr-neutral-100: hsl(0 0% 100%);
+
+	--ff-primary: "Be Vietnam Pro", sans-serif;
+
+	--ff-body: var(--ff-primary);
+	--ff-heading: var(--ff-primary);
+
+	--fw-regular: 400;
+	--fw-semi-bold: 500;
+	--fw-bold: 700;
+
+	--fs-300: 0.8125rem;
+	--fs-400: 0.875rem;
+	--fs-500: 0.9375rem;
+	--fs-600: 1rem;
+	--fs-650: 1.125rem;
+	--fs-700: 1.25rem;
+	--fs-800: 1.5rem;
+	--fs-900: 1.875rem;
+
+	--fs-body: var(--fs-400);
+	--fs-primary-heading: var(--fs-800);
+	--fs-secondary-heading: var(--fs-700);
+	--fs-nav: var(--fs-500);
+	--fs-button: var(--fs-300);
+
+	--size-100: 0.25rem;
+	--size-200: 0.5rem;
+	--size-300: 0.75rem;
+	--size-400: 1rem;
+	--size-500: 1.5rem;
+	--size-600: 2rem;
+	--size-700: 3rem;
+	--size-800: 4rem;
+	--size-900: 5rem;
+
 	height: 1240px;
 	width: 1754px;
 
 	border: 2px solid black;
 `;
 
-export const Col = styled.div``;
+export const Grid = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	gap: 2rem;
+	padding-inline: 1rem;
+	padding-block: 1rem;
+	height: 100%;
+`;
+
+export const Col = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: space-around;
+
+	background-color: black;
+
+	padding-inline: 1rem;
+	padding-block: 1rem;
+
+	border-radius: 0.5rem;
+
+	height: 100%;
+`;
+
+export const CategoryContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+`;
+
+export const CategoryTitleContainer = styled.div`
+	text-align: center;
+	color: red;
+
+	& .primaryDescription {
+		font-family: var(--ff-heading);
+		font-size: var(--fs-900);
+		font-weight: var(--fw-bold);
+	}
+
+	& .secondaryDescription {
+		font-size: var(--fs-800);
+		font-weight: var(--fw-bold);
+	}
+
+	& .terinatyDescription {
+		font-size: var(--fs-700);
+		font-weight: var(--fw-semi-bold);
+	}
+`;
+
+export const DishContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+
+	font-size: var(--fs-650);
+	font-weight: var(--fw-bold);
+
+	color: white;
+
+	& .description {
+		display: grid;
+		grid-template-columns: auto auto;
+		align-items: end;
+		gap: 0.5ch;
+	}
+
+	& .id {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	& .primaryDescription {
+		grid-column: 2/-1;
+		grid-row: 1/2;
+
+		& sup {
+			font-size: var(--fs-300);
+		}
+	}
+
+	& .description:has(.warning) > .secondaryDesciption {
+		grid-column: 2/-1;
+		grid-row: 3/4;
+	}
+
+	& .secondaryDesciption {
+		grid-column: 2/-1;
+		grid-row: 2/3;
+
+		font-weight: var(--fw-regular);
+	}
+
+	& .warning {
+		grid-column: 2/-1;
+		grid-row: 2/3;
+	}
+
+	& .price {
+		padding-top: 0.4rem;
+	}
+`;
+
+export const FooterContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+
+	font-size: var(--fs-650);
+	font-weight: var(--fw-bold);
+
+	color: white;
+	background-color: red;
+`;
+
+export const ExtraCategoryContainer = styled(CategoryContainer)`
+	gap: 1rem;
+`;
+
+export const ExtraContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+
+	font-size: var(--fs-650);
+	font-weight: var(--fw-bold);
+
+	color: white;
+
+	& .description {
+	}
+
+	& .primaryDescription {
+		grid-column: 2/-1;
+		grid-row: 1/2;
+	}
+
+	& .secondaryDesciption {
+		font-weight: var(--fw-regular);
+	}
+
+	& .price {
+	}
+
+	& ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		gap: 0.75rem;
+
+		font-size: var(--fs-600);
+		opacity: 0.9;
+		width: 150%;
+		padding-left: 1rem;
+	}
+`;
