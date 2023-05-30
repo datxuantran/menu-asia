@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
+import backgroundImage from "./assets/images/asian-style-food-bowls-with-chopsticks-copy-space-writing-text.jpg";
 
 export const GlobalStyle = createGlobalStyle`
 *,
@@ -49,7 +50,7 @@ export const A4Page = styled.div`
 	--fs-400: 0.875rem;
 	--fs-500: 0.9375rem;
 	--fs-600: 1rem;
-	--fs-650: 1.125rem;
+	--fs-650: 1.2rem;
 	--fs-700: 1.25rem;
 	--fs-800: 1.5rem;
 	--fs-900: 1.875rem;
@@ -73,6 +74,8 @@ export const A4Page = styled.div`
 
 	height: 1240px;
 	width: 1754px;
+	background-image: url(${backgroundImage});
+	background-size: 1754px 1240px;
 
 	// border: 2px solid black;
 `;
@@ -93,7 +96,7 @@ export const Col = styled.div`
 	justify-content: space-between;
 	align-content: space-around;
 
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.8);
 
 	padding-inline: 1rem;
 	padding-block: 1rem;
