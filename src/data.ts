@@ -833,4 +833,12 @@ for (const paragraph of paragraphs) {
 
 // Print the array of items
 export default dishes;
+console.log(
+	dishes
+		.filter((dish) => parseInt(dish.id) >= 12)
+		.map(
+			(dish) => (dish.price = (parseFloat(dish.price) + 0.5).toFixed(2).toString())
+		)
+);
+
 console.log(dishes);
