@@ -53,6 +53,7 @@ export const A4Page = styled.div`
 	--fs-700: 1.25rem;
 	--fs-800: 1.5rem;
 	--fs-900: 1.875rem;
+	--fs-1000: 2rem;
 
 	--fs-body: var(--fs-400);
 	--fs-primary-heading: var(--fs-800);
@@ -73,7 +74,7 @@ export const A4Page = styled.div`
 	height: 1240px;
 	width: 1754px;
 
-	border: 2px solid black;
+	// border: 2px solid black;
 `;
 
 export const Grid = styled.div`
@@ -196,7 +197,7 @@ export const ExtraCategoryContainer = styled(CategoryContainer)`
 	gap: 1rem;
 `;
 
-export const ExtraContainer = styled.div`
+export const ExtraItemContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 
@@ -230,5 +231,104 @@ export const ExtraContainer = styled.div`
 		opacity: 0.9;
 		width: 150%;
 		padding-left: 1rem;
+	}
+`;
+
+// Drinks
+export const Group = styled.div`
+	font-size: var(--fs-650);
+	font-weight: var(--fw-bold);
+
+	color: white;
+
+	&:nth-child(n + 3) {
+		margin-top: 2rem;
+	}
+`;
+
+export const Row = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+
+	& sup {
+		font-size: var(--fs-300);
+	}
+`;
+export const Prices = styled.div`
+	display: grid;
+	grid-template-columns: 5ch 5ch;
+	gap: 2rem;
+	justify-items: start;
+`;
+
+export const Footer2 = styled.div`
+	font-size: var(--fs-650);
+	font-weight: var(--fw-bold);
+
+	color: white;
+
+	& .primary {
+		color: red;
+	}
+
+	& .sub {
+		font-weight: var(--fw-regular);
+	}
+`;
+
+export const AboutContainer = styled.div`
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	font-size: var(--fs-800);
+	font-weight: var(--fw-bold);
+
+	color: white;
+	text-align: center;
+
+	& .restaurant-name {
+		color: red;
+		font-family: var(--ff-heading);
+		font-size: var(--fs-1000);
+		font-weight: var(--fw-bold);
+	}
+
+	& .restaurant-description {
+		font-weight: var(--fw-regular);
+	}
+
+	& .restaurant-address {
+		font-size: var(--fs-900);
+	}
+
+	& .restaurant-tel {
+		font-size: var(--fs-900);
+
+		& span:first-child {
+			font-weight: var(--fw-regular);
+		}
+	}
+
+	& .restaurant-open-hours {
+		font-size: var(--fs-900);
+		font-weight: var(--fw-semi-bold);
+	}
+
+	& .restaurant-angebot {
+		font-size: var(--fs-800);
+		font-weight: var(--fw-semi-bold);
+
+		& div:nth-child(n + 3) {
+			font-size: var(--fs-900);
+			font-weight: var(--fw-bold);
+			color: red;
+		}
+	}
+
+	& .restaurant-timestamp {
 	}
 `;

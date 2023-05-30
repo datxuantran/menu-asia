@@ -154,6 +154,7 @@ export const drinks = [
 		superscriptText: "",
 		prices: [
 			{
+				volume: undefined,
 				price: "3.00",
 			},
 		],
@@ -164,6 +165,7 @@ export const drinks = [
 		superscriptText: "",
 		prices: [
 			{
+				volume: undefined,
 				price: "3.00",
 			},
 		],

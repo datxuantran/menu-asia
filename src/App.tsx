@@ -1,28 +1,36 @@
 import {
 	A4Page,
+	AboutContainer,
 	CategoryContainer,
 	CategoryTitleContainer,
 	Col,
 	DishContainer,
 	ExtraCategoryContainer,
-	ExtraContainer,
+	ExtraItemContainer,
+	Footer2,
 	FooterContainer,
 	GlobalStyle,
 	Grid,
+	Group,
+	Prices,
+	Row,
 } from "./style";
 import dishes, {
 	ICategory,
 	IDish,
 	categories,
+	drinks,
 	extraItems,
 	footers,
 } from "./data";
+
+import restaurantImage from "./assets/images/asia-imbiss.jpg";
 
 const App = () => {
 	return (
 		<>
 			<GlobalStyle />
-			<Front />
+			{/* <Front /> */}
 			<Back />
 		</>
 	);
@@ -67,12 +75,289 @@ const Back = () => {
 				</Col>
 				<Col>
 					<Category id={11} min={100} max={106} />
-					<Category id={12} min={0} max={0} />
-					<Category id={13} min={0} max={0} />
+					<Drinks id={12} min={1} max={13} />
+					<Drinks2 id={13} min={14} max={19} />
+					<Footer2>
+						<div className='primary'>
+							Allergene können bei der Bestellung erfragt werden
+						</div>
+						<div>Erläuterungen zur Speisekarte:</div>
+						<div className='sub'>
+							(1)=mit Süßungsmittel (2)=mit Geschmacksverstärker, Farbstoff und
+							Süßungsmittel (3)=coffeinhaltig und mit Farbstoff
+						</div>
+					</Footer2>
 				</Col>
-				<Col></Col>
+				<Col>
+					<About />
+				</Col>
 			</Grid>
 		</A4Page>
+	);
+};
+
+const About = () => {
+	return (
+		<AboutContainer>
+			<div className='restaurant-name'>
+				<div>ASIA-IMBISS</div>
+				<div>TUAN KIET</div>
+			</div>
+			<div className='restaurant-image'>
+				<img src={restaurantImage} width={500} />
+			</div>
+			<div className='restaurant-description'>
+				<div>Vor Ihren Augen im Wok frisch zubereitete Qualitätsware!</div>
+				<div>Preiswert und schnell!</div>
+			</div>
+			<div className='restaurant-address'>
+				<div>Rathausstr.2</div>
+				<div>74366 Kirchheim/N</div>
+			</div>
+			<div className='restaurant-tel'>
+				<span>Tel.:</span>
+				<span>07143/961317</span>
+			</div>
+			<div className='restaurant-open-hours'>
+				<div>ÖFFNUNGSZEITEN:</div>
+				<div>Montag, Mittwoch - Freitag:</div>
+				<div>11:00-15:00 Uhr</div>
+				<div>17:00-21:30 Uhr</div>
+				<div>Samstag, Sonntag & Feiertage:</div>
+				<div>12:00-22:00 Uhr</div>
+				<div>Dienstag ist Ruhetag!</div>
+			</div>
+			<div className='restaurant-angebot'>
+				<div>Gerne beliefern wir auf Anfrage Ihre Party!</div>
+				<div>Unser Service wird Sie überzeugen!</div>
+				<div>Alle Gerichte auch zum Mitnehmen!</div>
+			</div>
+			<div className='restaurant-timestamp'>GÜLTIG AB: 20.05.2023</div>
+		</AboutContainer>
+	);
+};
+
+const Drinks = ({ id, min, max }: { id: number; min: number; max: number }) => {
+	const category = categories[id];
+	const cDrinks = drinks.filter((drink) => drink.id <= max && drink.id >= min);
+
+	return (
+		<CategoryContainer>
+			<CategoryTitle category={category} />
+			<Group>
+				<Row>
+					<div></div>
+					<Prices style={{ fontWeight: "normal", textDecoration: "underline" }}>
+						<div>0.2l</div>
+						<div>0.4l</div>
+					</Prices>
+				</Row>
+
+				{cDrinks
+					.filter(
+						(drink) =>
+							drink.prices?.[0]?.volume === 0.2 ||
+							drink.prices?.[0]?.volume === 0.4 ||
+							drink.prices?.[1]?.volume === 0.2 ||
+							drink.prices?.[1]?.volume === 0.4
+					)
+					.map((drink, idx) => (
+						<Row key={idx}>
+							<div>
+								{drink.description}
+								{drink.superscriptText !== "" ? (
+									<sup>{drink.superscriptText}</sup>
+								) : (
+									<></>
+								)}
+							</div>
+							<Prices>
+								{drink.prices.length === 2 ? (
+									<>
+										<div>{drink.prices[0].price}€</div>
+										<div>{drink.prices[1].price}€</div>
+									</>
+								) : (
+									<>
+										<div></div>
+										<div>{drink.prices[0].price}€</div>
+									</>
+								)}
+							</Prices>
+						</Row>
+					))}
+			</Group>
+
+			<Group>
+				<Row>
+					<div></div>
+					<Prices style={{ fontWeight: "normal", textDecoration: "underline" }}>
+						<div></div>
+						<div>0.25l</div>
+					</Prices>
+				</Row>
+
+				{cDrinks
+					.filter((drink) => drink.prices?.[0]?.volume === 0.25)
+					.map((drink, idx) => (
+						<Row key={idx}>
+							<div>
+								{drink.description}
+								{drink.superscriptText !== "" ? (
+									<sup>{drink.superscriptText}</sup>
+								) : (
+									<></>
+								)}
+							</div>
+							<Prices>
+								{drink.prices.length === 2 ? (
+									<>
+										<div>{drink.prices[0].price}€</div>
+										<div>{drink.prices[1].price}€</div>
+									</>
+								) : (
+									<>
+										<div></div>
+										<div>{drink.prices[0].price}€</div>
+									</>
+								)}
+							</Prices>
+						</Row>
+					))}
+			</Group>
+
+			<Group>
+				<Row>
+					<div></div>
+					<Prices style={{ fontWeight: "normal", textDecoration: "underline" }}>
+						<div></div>
+						<div></div>
+					</Prices>
+				</Row>
+
+				{cDrinks
+					.filter((drink) => drink.prices?.[0]?.volume === undefined)
+					.map((drink, idx) => (
+						<Row key={idx}>
+							<div>
+								{drink.description}
+								{drink.superscriptText !== "" ? (
+									<sup>{drink.superscriptText}</sup>
+								) : (
+									<></>
+								)}
+							</div>
+							<Prices>
+								{drink.prices.length === 2 ? (
+									<>
+										<div>{drink.prices[0].price}€</div>
+										<div>{drink.prices[1].price}€</div>
+									</>
+								) : (
+									<>
+										<div></div>
+										<div>{drink.prices[0].price}€</div>
+									</>
+								)}
+							</Prices>
+						</Row>
+					))}
+			</Group>
+		</CategoryContainer>
+	);
+};
+
+const Drinks2 = ({
+	id,
+	min,
+	max,
+}: {
+	id: number;
+	min: number;
+	max: number;
+}) => {
+	const category = categories[id];
+	const cDrinks = drinks.filter((drink) => drink.id <= max && drink.id >= min);
+
+	return (
+		<CategoryContainer>
+			<CategoryTitle category={category} />
+			<Group>
+				<Row>
+					<div></div>
+					<Prices style={{ fontWeight: "normal", textDecoration: "underline" }}>
+						<div></div>
+						<div>0.5l</div>
+					</Prices>
+				</Row>
+
+				{cDrinks
+					.filter((drink) => drink.prices?.[0]?.volume === 0.5)
+					.map((drink, idx) => (
+						<Row key={idx}>
+							<div>
+								{drink.description}
+								{drink.superscriptText !== "" ? (
+									<sup>{drink.superscriptText}</sup>
+								) : (
+									<></>
+								)}
+							</div>
+							<Prices>
+								{drink.prices.length === 2 ? (
+									<>
+										<div>{drink.prices[0].price}€</div>
+										<div>{drink.prices[1].price}€</div>
+									</>
+								) : (
+									<>
+										<div></div>
+										<div>{drink.prices[0].price}€</div>
+									</>
+								)}
+							</Prices>
+						</Row>
+					))}
+			</Group>
+
+			<Group>
+				<Row>
+					<div></div>
+					<Prices style={{ fontWeight: "normal", textDecoration: "underline" }}>
+						<div></div>
+						<div>0.2l</div>
+					</Prices>
+				</Row>
+
+				{cDrinks
+					.filter((drink) => drink.prices?.[0]?.volume === 0.2)
+					.map((drink, idx) => (
+						<Row key={idx}>
+							<div>
+								{drink.description}
+								{drink.superscriptText !== "" ? (
+									<sup>{drink.superscriptText}</sup>
+								) : (
+									<></>
+								)}
+							</div>
+							<Prices>
+								{drink.prices.length === 2 ? (
+									<>
+										<div>{drink.prices[0].price}€</div>
+										<div>{drink.prices[1].price}€</div>
+									</>
+								) : (
+									<>
+										<div></div>
+										<div>{drink.prices[0].price}€</div>
+									</>
+								)}
+							</Prices>
+						</Row>
+					))}
+			</Group>
+		</CategoryContainer>
 	);
 };
 
@@ -83,7 +368,10 @@ const Extras = ({ id }: { id: number }) => {
 			<CategoryTitle category={category} />
 			{extraItems.map((item, idx) => {
 				return (
-					<ExtraContainer key={idx} style={idx === 4 ? { alignItems: "end" } : {}}>
+					<ExtraItemContainer
+						key={idx}
+						style={idx === 4 ? { alignItems: "end" } : {}}
+					>
 						<div className='description'>
 							<div className='primaryDescription'>
 								{idx !== 4 ? (
@@ -124,7 +412,7 @@ const Extras = ({ id }: { id: number }) => {
 							</div>
 						</div>
 						<div className='price'>{item.price}€</div>
-					</ExtraContainer>
+					</ExtraItemContainer>
 				);
 			})}
 		</ExtraCategoryContainer>
