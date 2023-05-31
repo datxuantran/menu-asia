@@ -255,7 +255,7 @@ export const extraItems = [
 		id: 3,
 		primaryDescription: "Portion gekochter Reis",
 		secondaryDescription: "",
-		price: "1.50",
+		price: "2.00",
 	},
 	{
 		id: 4,
@@ -277,7 +277,7 @@ export const footers = [
 	{
 		id: 1,
 		description:
-			"Gebratener Reis/Nudeln anstatt gekocktem Reis nur für die Gerichte 39 bis 86",
+			"Gebratener Reis/Nudeln anstatt gekochtem Reis nur für die Gerichte 39 bis 86",
 		price: "2.00",
 	},
 	{
@@ -289,7 +289,7 @@ export const footers = [
 	{
 		id: 3,
 		description:
-			'Jede weitere gekochte Soße Soßenarten auf der Rückseite bei "Extras"',
+			'Jede weitere gekochte Soße (Soßenarten auf der Rückseite bei "Extras")',
 		price: "2.00",
 	},
 ];
@@ -304,13 +304,13 @@ export interface ICategory {
 export const categories: ICategory[] = [
 	{
 		id: 1,
-		primaryDescription: "VORSPEISE",
+		primaryDescription: "VORSPEISEN",
 		secondaryDescription: "",
 		terinatyDescription: "",
 	},
 	{
 		id: 2,
-		primaryDescription: "GEBRATEN NUDELN",
+		primaryDescription: "GEBRATENE NUDELN",
 		secondaryDescription: "MIT EI UND GEMÜSE",
 		terinatyDescription: "",
 	},
@@ -324,7 +324,7 @@ export const categories: ICategory[] = [
 		id: 4,
 		primaryDescription: "HÄHNCHEN-GERICHTE",
 		secondaryDescription: "ALLE GERICHTE MIT GEMÜSE UND REIS",
-		terinatyDescription: "AUCH MIT PANIERTEN HÄHNCHEN MÖGLICH (BITTE ERWÄHNEN)",
+		terinatyDescription: "AUCH MIT PANIERTEM HÄHNCHEN MÖGLICH",
 	},
 	{
 		id: 5,
@@ -390,7 +390,7 @@ export const categories: ICategory[] = [
 
 const dishesText = `
 01. 
-Pekingsuppe 
+Pekingsuppe2
 2.50€
 
 02. 
@@ -403,17 +403,17 @@ Tom Yam Gung (scharf)2
 
 04. 
 Tom Kha Gai (scharf)2 
-Thailändische Hühnersuppe
+Thailändische Garnelensuppe
 3.00€
 
 05. 
 Gemüsefrühlingsrollen2 
 6 Stück
-2.00€
+2.50€
 
 06. 
 Krabbenchips
-2.50€
+2.00€
 
 07. 
 Gebackene Wan-Tans2 
@@ -529,7 +529,7 @@ mit süß-sauer ODER Erdnuss-Soße
 44. 
 in Thai-Curry-Soße mit Kokosmilch (scharf)2 
 "OHNE SCHARF" geht nicht
-7.50€ 
+7.50€
 
 45. 
 mit speziellen Thai-Gewürzen (scharf)2 
@@ -615,6 +615,10 @@ in Curry-Soße (leicht scharf)2
 
 63. 
 mit süß-sauer2
+9.50€
+
+64.
+mit Erdnuss-Soße2
 9.50€
 
 65. 

@@ -457,7 +457,10 @@ const CategoryTitle = ({ category }: { category: ICategory }) => {
 				<></>
 			)}
 			{terinatyDescription !== "" ? (
-				<div className='terinatyDescription'>{terinatyDescription}</div>
+				<div className='terinatyDescription'>
+					<div>{terinatyDescription}</div>
+					{category.id === 4 ? <div>(BITTE ERWÄHNEN)</div> : <></>}
+				</div>
 			) : (
 				<></>
 			)}
@@ -498,7 +501,10 @@ const Dish = ({ dish }: { dish: IDish }) => {
 					<></>
 				)}
 			</div>
-			<div className='price'>{price}€</div>
+			<div className='price'>
+				{parseInt(id) === 49 ? "8.00 - " : ""}
+				{price}€
+			</div>
 		</DishContainer>
 	);
 };

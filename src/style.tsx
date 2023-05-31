@@ -182,6 +182,7 @@ export const DishContainer = styled.div`
 
 	& .price {
 		padding-top: 0.4rem;
+		white-space: nowrap;
 	}
 `;
 
