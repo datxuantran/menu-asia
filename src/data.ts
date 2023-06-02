@@ -399,11 +399,12 @@ Gemüsesuppe mit Glasnudeln2
 
 03. 
 Tom Yam Gung (scharf)2
+Thailändische Garnelensuppe
 3.50€
 
 04. 
 Tom Kha Gai (scharf)2 
-Thailändische Garnelensuppe
+Thailändische Hühnersuppe
 3.00€
 
 05. 
@@ -702,7 +703,7 @@ gebratene Sojasprossen2
 6.50€
 
 84. 
-Tofu in Thai-Curry-Soße mit Kokosmilch2 (scharf) 
+Tofu in Thai-Curry-Soße mit Kokosmilch (scharf)2 
 "OHNE SCHARF" geht nicht
 7.50€
 

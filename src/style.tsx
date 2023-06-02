@@ -50,7 +50,7 @@ export const A4Page = styled.div`
 	--fs-400: 0.875rem;
 	--fs-500: 0.9375rem;
 	--fs-600: 1rem;
-	--fs-650: 1.125rem;
+	--fs-650: 1.0625rem;
 	--fs-700: 1.25rem;
 	--fs-800: 1.5rem;
 	--fs-900: 1.875rem;
